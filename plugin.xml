@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.apache.cordova.evaluation"
+      version="0.0.1">
+
+    <name>Android Evaluation</name>
+    <description>Cordova Android Evaluation Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,evaluation</keywords>
+    <repo>https://github.com/ZhichengChen/cordova-plugin-evaluation.git</repo>
+    <issue>https://github.com/ZhichengChen/cordova-plugin-evaluation/issues</issue>
+
+    <js-module src="www/index.js" name="index">
+        <merges target="navigator.evaluation" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Evaluation">
+                <param name="android-package" value="org.apache.cordova.evaluation.Evaluation"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Evaluation.java" target-dir="src/org/apache/cordova/evaluation" />
+
+    </platform>
+
+</plugin>
